@@ -43,11 +43,13 @@ try {
           </p>
         </div>
         <div class="col-lg-12">
-          <p class="my-4">
+          <p class="my-5">
             <?php
             echo nl2br($b["phone_description"]);
             ?>
           </p>
+          <div class="btn btn-outline-warning text-capitalize px-5 fs-2" id="buyBtn" data-bs-toggle="modal"
+            data-bs-target="#buyModal">buy</div>
         </div>
       </div>
       <div class="col-12 col-lg-3">
@@ -62,6 +64,37 @@ try {
               <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '3.jpg' ?>" class="card-img-top" />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="buyModalLabel">Buy Now</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="process_buy.php">
+            <!-- Assuming process_buy.php is the script to handle the form data -->
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <input type="hidden" name="productId" value="<?php echo $b['id']; ?>">
+            <!-- Passing product id as a hidden field -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
