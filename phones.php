@@ -20,7 +20,6 @@ try {
   ?>
   <div class="container ">
     <h1 class="my-4">The devices</h1>
-
     <div class="row">
       <div class="container col-12 col-md-9 d-grid gx-2">
         <div class="row phones-container ">
@@ -96,7 +95,6 @@ try {
       </div>
     </div>
   </div>
-
   <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -223,10 +221,7 @@ try {
       </div>
     </div>
   </div>
-
-
   <?php
-
   require_once('incs/footer.inc.php');
 } catch (Exception $th) {
   logError($th);

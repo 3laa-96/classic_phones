@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -8,7 +7,6 @@ $db = "classic_phones";
 function connect()
 {
   global $servername, $username, $password, $db;
-
   $conn = new mysqli($servername, $username, $password, $db);
   return $conn;
 }
@@ -42,9 +40,7 @@ function logError(Exception $exception)
   fwrite($handler, "Line:" . $exception->getLine() . "\n");
   fwrite($handler, "datetime:" . date("Y-m-d H:i:s") . "\n");
   fwrite($handler, "\n");
-
   fclose($handler);
-
   exit;
 }
 ?>
@@ -65,7 +61,6 @@ function logError(Exception $exception)
     if (clockElement) {
       clockElement.textContent = timeString;
     }
-
     setTimeout(updateClock, 1000);
   }
   updateClock();

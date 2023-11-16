@@ -31,22 +31,17 @@ try {
     <h1>
       <?php echo $b["name"] ?>
     </h1>
-
     <em>
       <?php echo $b["year"]; ?>.
     </em>
     <div class="row">
       <div class="col-12 col-lg-9">
-
-
-
         <div class="col-lg-12">
           <p>
             <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start p-3"
               style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
           </p>
         </div>
-
         <div class="col-lg-12">
           <p class="my-4">
             <?php
@@ -54,8 +49,6 @@ try {
             ?>
           </p>
         </div>
-
-
       </div>
       <div class="col-12 col-lg-3">
         <div class="row gx-2">
@@ -75,7 +68,6 @@ try {
   </div>
   <?php
   require_once('incs/footer.inc.php');
-
 } catch (Exception $th) {
   logError($th);
 }
