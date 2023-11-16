@@ -1,22 +1,22 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .phone {
-    text-decoration: none;
-    color: grey;
-    position: relative;
+  text-decoration: none;
+  color: grey;
+  position: relative;
 }
 
 .phone.active {
-    color: black;
+  color: black;
 }
 
 .phone span.badge-new {
-    position: absolute;
-    top: -7px;
-    right: 5px;
-    padding: 4px 10px;
+  position: absolute;
+  top: -7px;
+  right: 5px;
+  padding: 4px 10px;
 }
 
 /* .book span.badge-winner {
@@ -30,19 +30,27 @@ body {
 } */
 
 .book-aside {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .book-aside img {
-    max-height: 230px;
+  max-height: 230px;
+}
+
+#clock {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 /* CSS */
 @font-face {
-    font-family: nokia;
-    src: url(../webfonts/NokiaKokia.ttf);
+  font-family: nokia;
+  src: url(../webfonts/NokiaKokia.ttf);
 }
 
 .nokia {
-    font-family: nokia;
+  font-family: nokia;
 }

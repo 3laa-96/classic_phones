@@ -3,13 +3,14 @@ $currentTab = "phones";
 require_once('incs/header.inc.php');
 require_once('incs/functions.inc.php');
 
+
 $conn = connect();
 $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, phone_condition
         FROM phone_details";
 
 $phones = $conn->query($sql);
 ?>
-<div class="container mb-5">
+<div class="container ">
   <h1 class="my-4">The devices</h1>
 
   <div class="row">
@@ -217,5 +218,7 @@ $phones = $conn->query($sql);
 
 
 <?php
+
 require_once('incs/footer.inc.php');
+
 ?>

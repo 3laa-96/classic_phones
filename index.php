@@ -2,6 +2,7 @@
 $currentTab = "home";
 require_once('incs/header.inc.php');
 ?>
+
 <div id="carouselControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="0" class="active" aria-current="true"
@@ -30,6 +31,9 @@ require_once('incs/header.inc.php');
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
 <div class="container py-5">
   <p>Welcome to a nostalgic journey through the iconic era of mobile communication! Our website is a tribute to the
     timeless classics—the legendary Nokia phones that defined an entire generation from the year 2000 to 2009. In an

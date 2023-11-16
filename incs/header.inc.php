@@ -26,7 +26,7 @@ require_once('config.php');
 
 </head>
 
-<body>
+<body class="position-relative pb-5">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <span class="navbar-brand nokia" href="#">NOKIA</span>
@@ -42,8 +42,8 @@ require_once('config.php');
           <a class="nav-link <?php echo (isset($currentTab) && $currentTab == "phones") ? "active" : ""; ?>"
             href="<?php echo BASEURL; ?>phones.php">
             <i class="fas fa-mobile"></i> Phones</a>
-
         </div>
+        <div id="clock" class=" ms-md-auto  btn btn-outline-light " disabled data-bs-toggle="button"></div>
       </div>
     </div>
   </nav>

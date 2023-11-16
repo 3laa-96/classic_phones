@@ -72,24 +72,11 @@ try {
         </div>
       </div>
     </div>
-
   </div>
-  </div>
-  </div>
-  </div>
-
   <?php
   require_once('incs/footer.inc.php');
 
 } catch (Exception $th) {
-  $filename = "log/log_" . date("Y_m_d") . ".log";
-  $handler = fopen($filename, "a") or die("cannot open the file");
-  fwrite($handler, "Error:" . $th->getMessage() . "\n");
-  fwrite($handler, "Path:" . $th->getFile() . "\n");
-  fwrite($handler, "Line:" . $th->getLine() . "\n");
-  fwrite($handler, "datetime:" . date("Y-m-d H:i:s") . "\n");
-  fwrite($handler, "\n");
-  fclose($handler);
-  exit;
+  logError($th);
 }
 ?>
