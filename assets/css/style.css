@@ -1,0 +1,48 @@
+body {
+    overflow-x: hidden;
+}
+
+.phone {
+    text-decoration: none;
+    color: grey;
+    position: relative;
+}
+
+.phone.active {
+    color: black;
+}
+
+.phone span.badge-new {
+    position: absolute;
+    top: -7px;
+    right: 5px;
+    padding: 4px 10px;
+}
+
+/* .book span.badge-winner {
+    position: absolute;
+    bottom: -7px;
+    left: 10px;
+    right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 10px;
+} */
+
+.book-aside {
+    max-width: 200px;
+}
+
+.book-aside img {
+    max-height: 230px;
+}
+
+/* CSS */
+@font-face {
+    font-family: nokia;
+    src: url(../webfonts/NokiaKokia.ttf);
+}
+
+.nokia {
+    font-family: nokia;
+}
