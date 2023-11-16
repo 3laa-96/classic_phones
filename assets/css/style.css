@@ -1,3 +1,8 @@
+@font-face {
+  font-family: nokia;
+  src: url(../webfonts/NokiaKokia.ttf);
+}
+
 body {
   overflow-x: hidden;
 }
@@ -19,36 +24,12 @@ body {
   padding: 4px 10px;
 }
 
-/* .book span.badge-winner {
-    position: absolute;
-    bottom: -7px;
-    left: 10px;
-    right: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 4px 10px;
-} */
-
-.book-aside {
-  max-width: 200px;
-}
-
-.book-aside img {
-  max-height: 230px;
-}
-
 #clock {
   position: fixed;
   top: 10px;
   right: 10px;
   font-size: 18px;
   color: #ffffff;
-}
-
-/* CSS */
-@font-face {
-  font-family: nokia;
-  src: url(../webfonts/NokiaKokia.ttf);
 }
 
 .nokia {
