@@ -88,3 +88,18 @@ Path:E:\programs\wamp\www\Classic-phones\phone.php
 Line:100
 datetime:2023-11-17 13:16:40
 
+Error:SQLSTATE[42S22]: Column not found: 1054 Unknown column 'phone_id' in 'field list'
+Path:E:\programs\wamp\www\Classic-phones\process_buy.php
+Line:20
+datetime:2023-11-17 14:54:12
+
+Error:SQLSTATE[42S22]: Column not found: 1054 Unknown column 'phone_id' in 'field list'
+Path:E:\programs\wamp\www\Classic-phones\process_buy.php
+Line:21
+datetime:2023-11-17 14:55:51
+
+Error:SQLSTATE[42S22]: Column not found: 1054 Unknown column 'phone_id' in 'field list'
+Path:E:\programs\wamp\www\Classic-phones\process_buy.php
+Line:21
+datetime:2023-11-17 14:56:09
+

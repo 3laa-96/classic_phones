@@ -14,6 +14,7 @@ try {
   if (isset($_GET["phone"]) && !empty($_GET["phone"])) {
     $key = $_GET["phone"];
     $pdo = connectPDO();
+
     $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description,phone_price as price, phone_rating
         FROM phone_details
          WHERE id= :phone_id";
@@ -110,8 +111,6 @@ try {
 
         <div class="btn btn-outline-warning text-capitalize fs-5 " data-bs-toggle="modal" data-bs-target="#buyModal">Buy
           Now</div>
-        <div class="btn btn-outline-warning text-capitalize fs-5 ms-2" data-bs-toggle="modal" data-bs-target="#buyModal">
-          Add To Cart</div>
       </div>
     </div>
 
@@ -138,6 +137,10 @@ try {
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" name="email" required>
             </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="phone" class="form-control" id="phone" name="phone" required>
+            </div>
             <input type="hidden" name="productId" value="<?php echo $b['id']; ?>">
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -145,6 +148,7 @@ try {
       </div>
     </div>
   </div>
+
   <?php
   require_once('incs/footer.inc.php');
 } catch (Exception $th) {
