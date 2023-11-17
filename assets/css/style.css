@@ -64,12 +64,6 @@ body {
   font-weight: 600 !important;
 }
 
-#clock:hover {
-  color: white !important;
-  background-color: #212529 !important;
-
-}
-
 @media (max-width: 767px) {
   #clock {
     display: none !important;
@@ -84,10 +78,6 @@ body {
   color: orange;
 }
 
-/* .section-title {
-  border-bottom: 3px solid #212529;
-  padding-bottom: 14px;
-} */
 .section-title {
   position: relative;
   text-transform: uppercase;
@@ -107,7 +97,8 @@ body {
 
 .border-top {
   border-top: 1px dashed #ddd;
-  padding: 20px 0px;
+  padding: 18px 0px;
+  margin-bottom: 0px;
 }
 
 .carousel {

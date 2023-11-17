@@ -55,7 +55,7 @@ function logError(Exception $exception)
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    var timeString = hours + ":" + minutes + ":<span style='font-size: smaller;'>" + seconds + "</span>";
+    var timeString = hours + ":" + ":<span style='font-size: 16px;'>" + minutes + "</span>" + ":<span style='font-size: 12px;'>" + seconds + "</span>";
 
     var clockElement = document.getElementById("clock");
     if (clockElement) {

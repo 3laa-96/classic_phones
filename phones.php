@@ -10,8 +10,9 @@ function exception_error_handler($severity, $message, $file, $line)
 set_error_handler("exception_error_handler");
 try {
   $conn = connect();
-  $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, phone_condition
+  $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, stock
         FROM phone_details";
+
 
   $phones = $conn->query($sql);
   ?>
@@ -19,7 +20,7 @@ try {
     <div class="row ">
       <!-- TITLE -->
       <div class="col-md-9  d-flex justify-content-center my-2">
-        <h1 class="my-4">The devices</h1>
+        <h1 class="my-5 section-title">Our Products</h1>
       </div>
       <!-- PHONE GRID -->
       <div class="col-12 col-md-9 d-grid gx-2 mb-4">
@@ -33,9 +34,12 @@ try {
                   <img src="<?php echo PHONE_IMGS_PATH . $phone["image"] ?>" class="card-img-top hover-shadow"
                     alt="<?php echo $phone["name"]; ?>" />
                   <?php
+                  echo (isset($phone["stock"]) && $phone["stock"] == "out of stock") ?
+                    '<span class="badge-new badge bg-danger text-capitalize ">' . $phone["stock"] . '</span>' :
+                    '<span class="badge-new badge bg-success text-capitalize ">' . $phone["stock"] . '</span>';
 
-                  echo '<span class="badge-new badge bg-danger text-capitalize ">' . $phone["phone_condition"] . '</span>';
                   ?>
+
                   <div class="card-body">
                     <h5 class="card-title">
                       <?php echo $phone["name"]; ?>

@@ -42,7 +42,7 @@ try {
 
   <div class="container pt-5">
     <p>Welcome to a nostalgic journey through the iconic era of mobile communication! Our website is a tribute to the
-      timeless classics—the legendary Nokia phones that defined an entire generation from the year 2000 to 2009. In an
+      timeless classics—the legendary Nokia phones that defined an entire generation from the year 2000 to 2011. In an
       age when mobile phones were becoming an essential part of our daily lives, Nokia stood at the forefront, setting
       the standard for durability, reliability, and innovation.</p>
 

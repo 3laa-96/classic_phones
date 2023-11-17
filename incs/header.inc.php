@@ -40,7 +40,7 @@ require_once('config.php');
             <i class="fas fa-home px-1" style="color: #e7ebf4;"></i>Home</a>
           <a class="nav-link <?php echo (isset($currentTab) && $currentTab == "phones") ? "active" : ""; ?>"
             href="<?php echo BASEURL; ?>phones.php">
-            <i class="fas fa-mobile px-1"></i>Products</a>
+            <i class="fas fa-mobile px-1"></i>Shop</a>
         </div>
         <div id="clock" class=" ms-md-auto "></div>
       </div>

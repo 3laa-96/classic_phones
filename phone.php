@@ -14,7 +14,7 @@ try {
   if (isset($_GET["phone"]) && !empty($_GET["phone"])) {
     $key = $_GET["phone"];
     $pdo = connectPDO();
-    $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, phone_rating
+    $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description,phone_price as price, phone_rating
         FROM phone_details
          WHERE id= :phone_id";
 
@@ -81,19 +81,7 @@ try {
         <h1 class="py-3 pt-lg-0 ">
           <?php echo $b["name"] ?>
         </h1>
-        <h5 class="py-2 ">
-          <?php echo $b["year"]; ?>.
-        </h5>
-        <h5 class="border-top ">
-          $ 150
-        </h5>
-        <!-- <div class="pb-3">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div> -->
+
 
         <div class="pb-3">
           <?php
@@ -107,12 +95,17 @@ try {
           }
           ?>
         </div>
+        <h5 class="border-top ">Price :
+          <?php echo $b["price"]; ?>$
+        </h5>
 
-
-        <p class="mb-4 border-top">
-          <?php
-          echo nl2br($b["phone_description"]);
-          ?>
+        <p class=" border-top">
+        <h5 class="pb-2 ">Model Year:
+          <?php echo $b["year"]; ?>
+        </h5>
+        <?php
+        echo nl2br($b["phone_description"]);
+        ?>
         </p>
 
         <div class="btn btn-outline-warning text-capitalize fs-5 " data-bs-toggle="modal" data-bs-target="#buyModal">Buy
@@ -121,21 +114,7 @@ try {
           Add To Cart</div>
       </div>
     </div>
-    <!-- <div class="col-12 col-lg-3">
-      <div class="row gx-2">
-        <div class="col-6 col-md-6 col-lg-12 mb-3">
-          <div class="card phone-aside mx-md-auto h-100">
-            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '2.jpg' ?>" class="card-img-top" />
-          </div>
-        </div>
-        <div class="col-6 col-md-6 col-lg-12 mb-3">
-          <div class="card phone-aside mx-md-auto h-100">
-            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '3.jpg' ?>" class="card-img-top" />
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- </div> -->
+
   </div>
   <!-- Modal -->
   <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
