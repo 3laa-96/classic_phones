@@ -30,7 +30,6 @@ try {
   ?>
 
   <div class="container my-5 product-details">
-
     <div class="row">
       <!-- <div class="col-12 col-lg-9"> -->
       <div class="col-lg-6">
@@ -49,7 +48,6 @@ try {
                   <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . "3" ?>" class="d-block mx-auto" alt="..." />
                 </div>
               </div>
-
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -60,6 +58,7 @@ try {
               </button>
             </div>
           </div>
+          <!-- PHONE IMAGES -->
           <div class="col-4">
             <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
               style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
@@ -76,14 +75,12 @@ try {
           </div>
         </div>
 
-
+        <!-- PHONE DETAILS(NAME/MODEL YEAR/DESCRIPTION/PRICE/RATING) -->
       </div>
       <div class="col-lg-6">
         <h1 class="py-3 pt-lg-0 ">
           <?php echo $b["name"] ?>
         </h1>
-
-
         <div class="pb-3">
           <?php
           $rating = $b["phone_rating"];
@@ -104,16 +101,16 @@ try {
         <h5 class="pb-2 ">Model Year:
           <?php echo $b["year"]; ?>
         </h5>
-        <?php
-        echo nl2br($b["phone_description"]);
-        ?>
+        <p class="text_font">
+          <?php
+          echo nl2br($b["phone_description"]);
+          ?>
         </p>
-
+        </p>
         <div class="btn btn-outline-warning text-capitalize fs-5 " data-bs-toggle="modal" data-bs-target="#buyModal">Buy
           Now</div>
       </div>
     </div>
-
   </div>
   <!-- Modal -->
   <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">

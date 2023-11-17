@@ -1,3 +1,4 @@
+<!-- CONNECTION TO THE DB -->
 <?php
 $servername = "localhost";
 $username = "root";
@@ -28,13 +29,12 @@ function connectPDO()
     die();
   }
 }
+// ERROR LOGGING FUNCTION
 function logError(Exception $exception)
 {
   date_default_timezone_set('Asia/Beirut');
-
   $filename = "log/log_" . date("Y_m_d") . ".log";
   $handler = fopen($filename, "a") or die("cannot open the file");
-
   fwrite($handler, "Error:" . $exception->getMessage() . "\n");
   fwrite($handler, "Path:" . $exception->getFile() . "\n");
   fwrite($handler, "Line:" . $exception->getLine() . "\n");
@@ -44,26 +44,23 @@ function logError(Exception $exception)
   exit;
 }
 ?>
+
+<!-- CLOCK FUNCTION -->
 <script>
   function updateClock() {
     var now = new Date();
     var hours = now.getHours();
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
-
     hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-
     var timeString = hours + ":" + "<span style='font-size: 15px;'>" + minutes + "</span>" + ":<span style='font-size: 11px;'>" + seconds + "</span>";
-
     var clockElement = document.getElementById("clock");
     if (clockElement) {
       clockElement.innerHTML = timeString;
     }
     setTimeout(updateClock, 1000);
   }
-
   updateClock();
-
 </script>

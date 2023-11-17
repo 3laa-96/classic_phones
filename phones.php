@@ -10,10 +10,8 @@ function exception_error_handler($severity, $message, $file, $line)
 set_error_handler("exception_error_handler");
 try {
   $conn = connect();
-  $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, stock
+  $sql = "SELECT id, phone_name as name, phone_image_path as image,phone_price as price,phone_stock as stock
         FROM phone_details";
-
-
   $phones = $conn->query($sql);
   ?>
   <div class="container">
@@ -37,15 +35,13 @@ try {
                   echo (isset($phone["stock"]) && $phone["stock"] == "out of stock") ?
                     '<span class="badge-new badge bg-danger text-capitalize ">' . $phone["stock"] . '</span>' :
                     '<span class="badge-new badge bg-success text-capitalize ">' . $phone["stock"] . '</span>';
-
                   ?>
-
                   <div class="card-body">
                     <h5 class="card-title">
                       <?php echo $phone["name"]; ?>
                     </h5>
                     <p class="card-text">
-                      <?php echo $phone["year"]; ?>
+                      <?php echo $phone["price"]; ?>$
                     </p>
                   </div>
                 </div>
