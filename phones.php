@@ -29,8 +29,8 @@ try {
             ?>
             <div class="col-6 col-md-4 col-xl-3 mb-3 phone active">
               <a href="phone.php?phone=<?php echo $phone["id"]; ?>">
-                <div class="card">
-                  <img src="<?php echo PHONE_IMGS_PATH . $phone["image"] ?>" class="card-img-top"
+                <div class="card ">
+                  <img src="<?php echo PHONE_IMGS_PATH . $phone["image"] ?>" class="card-img-top hover-shadow"
                     alt="<?php echo $phone["name"]; ?>" />
                   <?php
 

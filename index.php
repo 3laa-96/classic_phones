@@ -51,51 +51,46 @@ try {
       resilience, and a touch of retro charm.</p>
 
   </div>
+
   <div class="container">
     <div class="d-flex flex-column align-items-center pb-5">
       <h3 class="my-5 section-title">New Arrivals</h3>
       <div class="row justify-content-center px-3">
         <div class="col-6 col-md-4  mb-3 phone active">
-          <a>
+          <a href="<?php echo BASEURL; ?>phone.php?phone=2">
             <div class="card">
               <img src="assets\images\phones\nokia-5310-used\5310-1.jpg" class="card-img-top" alt="image" />
               <span class="badge-new badge bg-danger text-capitalize "> New</span>
-
               <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title pt-4">
                   <spam class="nokia">NOKIA </spam> 5310
                 </h5>
-
               </div>
             </div>
           </a>
         </div>
         <div class="col-6 col-md-4  mb-3 phone active">
-          <a>
+          <a href="<?php echo BASEURL; ?>phone.php?phone=6">
             <div class="card">
               <img src="assets\images\phones\nokia-e71-used\e71-1.jpg" class="card-img-top" alt="image" />
               <span class="badge-new badge bg-danger text-capitalize "> New</span>
-
               <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title pt-4">
                   <spam class="nokia">NOKIA </spam> e71
                 </h5>
-
               </div>
             </div>
           </a>
         </div>
         <div class="col-6 col-md-4  mb-3 phone active">
-          <a>
+          <a href="<?php echo BASEURL; ?>phone.php?phone=8">
             <div class="card">
               <img src="assets\images\phones\nokia-8800-used\8800-1.jpg" class="card-img-top" alt="image" />
               <span class="badge-new badge bg-danger text-capitalize "> New</span>
-
               <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title pt-4">
                   <spam class="nokia">NOKIA </spam> 8800
                 </h5>
-
               </div>
             </div>
           </a>

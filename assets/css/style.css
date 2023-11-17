@@ -19,8 +19,8 @@ body {
 
 .phone span.badge-new {
   position: absolute;
-  top: -7px;
-  right: 5px;
+  top: 3px;
+  right: 3px;
   padding: 4px 10px;
 }
 
@@ -123,4 +123,17 @@ body {
 .nokia {
   font-family: nokia;
   font-size: 18px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }

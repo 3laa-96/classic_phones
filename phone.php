@@ -14,7 +14,7 @@ try {
   if (isset($_GET["phone"]) && !empty($_GET["phone"])) {
     $key = $_GET["phone"];
     $pdo = connectPDO();
-    $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description
+    $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, phone_rating
         FROM phone_details
          WHERE id= :phone_id";
 
@@ -27,6 +27,7 @@ try {
     exit();
   }
   ?>
+
   <div class="container my-5 product-details">
 
     <div class="row">
@@ -34,24 +35,17 @@ try {
       <div class="col-lg-6">
         <div class="row">
           <div class="col-12">
-            <div id="carouselControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
-              </div>
+            <!-- CAROUSEL -->
+            <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item">
-                  <img src="assets/images/carousel/carousel1.jpg" class="d-block w-100" alt="..." />
+                  <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="d-block mx-auto" alt="..." />
                 </div>
                 <div class="carousel-item active">
-                  <img src="assets/images/carousel/carousel2.jpg" class="d-block w-100" alt="..." />
+                  <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . "2" ?>" class="d-block mx-auto" alt="..." />
                 </div>
                 <div class="carousel-item">
-                  <img src="assets/images/carousel/carousel3.jpg" class="d-block w-100" alt="..." />
+                  <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . "3" ?>" class="d-block mx-auto" alt="..." />
                 </div>
               </div>
 
@@ -70,18 +64,16 @@ try {
               style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
           </div>
           <div class="col-4">
-            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
-              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . "2.jpg" ?>"
+              class="float-start py-3 gallery-image img-fluid" style="max-height: 500px; width: auto"
+              alt="<?php $b["name"] . '.jpg' ?>" />
           </div>
           <div class="col-4">
-            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
-              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . "3.jpg" ?>"
+              class="float-start py-3 gallery-image img-fluid" style="max-height: 500px; width: auto"
+              alt="<?php $b["name"] . '.jpg' ?>" />
           </div>
         </div>
-        <!-- <p>
-            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start p-3"
-              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
-          </p> -->
 
 
       </div>
@@ -95,23 +87,38 @@ try {
         <h5 class="border-top ">
           $ 150
         </h5>
+        <!-- <div class="pb-3">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div> -->
+
         <div class="pb-3">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
+          <?php
+          $rating = $b["phone_rating"];
+          for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $rating) {
+              echo '<span class="fa fa-star checked"></span>';
+            } else {
+              echo '<span class="fa fa-star"></span>';
+            }
+          }
+          ?>
         </div>
+
+
         <p class="mb-4 border-top">
           <?php
           echo nl2br($b["phone_description"]);
           ?>
         </p>
 
-        <div class="btn btn-outline-warning text-capitalize fs-5 " id="buyBtn" data-bs-toggle="modal"
-          data-bs-target="#buyModal">Buy Now</div>
-        <div class="btn btn-outline-warning text-capitalize fs-5 ms-2" id="buyBtn" data-bs-toggle="modal"
-          data-bs-target="#buyModal">Add To Cart</div>
+        <div class="btn btn-outline-warning text-capitalize fs-5 " data-bs-toggle="modal" data-bs-target="#buyModal">Buy
+          Now</div>
+        <div class="btn btn-outline-warning text-capitalize fs-5 ms-2" data-bs-toggle="modal" data-bs-target="#buyModal">
+          Add To Cart</div>
       </div>
     </div>
     <!-- <div class="col-12 col-lg-3">
@@ -140,7 +147,6 @@ try {
         </div>
         <div class="modal-body">
           <form method="post" action="process_buy.php">
-            <!-- Assuming process_buy.php is the script to handle the form data -->
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" required>
@@ -154,7 +160,6 @@ try {
               <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <input type="hidden" name="productId" value="<?php echo $b['id']; ?>">
-            <!-- Passing product id as a hidden field -->
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
