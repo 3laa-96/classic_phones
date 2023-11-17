@@ -7,22 +7,23 @@ function exception_error_handler($severity, $message, $file, $line)
 {
   throw new ErrorException($message, 0, $severity, $file, $line);
 }
-
 set_error_handler("exception_error_handler");
-
 try {
-
   $conn = connect();
   $sql = "SELECT id, phone_model_year as year, phone_name as name, phone_image_path as image, phone_description, phone_condition
         FROM phone_details";
 
   $phones = $conn->query($sql);
   ?>
-  <div class="container ">
-    <h1 class="my-4">The devices</h1>
-    <div class="row">
-      <div class="container col-12 col-md-9 d-grid gx-2">
-        <div class="row phones-container ">
+  <div class="container">
+    <div class="row ">
+      <!-- TITLE -->
+      <div class="col-md-9  d-flex justify-content-center my-2">
+        <h1 class="my-4">The devices</h1>
+      </div>
+      <!-- PHONE GRID -->
+      <div class="col-12 col-md-9 d-grid gx-2 mb-4">
+        <div class="row phones-container justify-content-center">
           <?php
           while ($phone = $phones->fetch_assoc()) {
             ?>
@@ -48,32 +49,32 @@ try {
             </div>
             <?php
           } ?>
-
         </div>
       </div>
-      <div class="col-3">
-        <div class="container">
+      <!-- SIDE CONTAINER -->
+      <div class="col-lg-3 col-md-3 col-12 ">
+        <div class="container rules">
           <div class="row">
-            <div class="col-12 pb-5">
-              <div class="col-12 pb-5">
-                <div class="card">
-                  <div class="card-header" data-bs-toggle="collapse" data-bs-target="#useful-link">
-                    Useful Links
-                  </div>
-                  <div class="card-body p-0 m-0">
-                    <ul type="circle" class="py-2 py-3 collapse show" id="useful-link">
-                      <li><a href="https://www.google.com" target="_new">Google</a></li>
-                      <li><a href="https://www.facebook.com" target="_new">Facebook</a></li>
-                      <li><a href="https://www.microsoft.com" target="_new">Microsoft</a></li>
-                    </ul>
-                  </div>
+            <div class="col-12 pb-4">
+              <!-- SIDE CONTAINER A -->
+              <div class="card mb-5">
+                <div class="card-header" data-bs-toggle="collapse" data-bs-target="#useful-link">
+                  Useful Links
+                </div>
+                <div class="card-body p-0 m-0">
+                  <ul type="circle" class="py-2 py-3 collapse show" id="useful-link">
+                    <li><a href="https://www.google.com" target="_new">Google</a></li>
+                    <li><a href="https://www.facebook.com" target="_new">Facebook</a></li>
+                    <li><a href="https://www.microsoft.com" target="_new">Microsoft</a></li>
+                  </ul>
                 </div>
               </div>
-              <div class="col-12 pb-5">
+              <!-- SIDE CONTAINER B -->
+              <div class="col-12 pb-4">
                 <div class="card">
                   <div class="card-header" data-bs-toggle="collapse" data-bs-target="#rules">Rules & Regulations</div>
-                  <div class="card-body  p-0 m-0">
-                    <dl id="rules" class="py-2 py-3  collapse show">
+                  <div class="card-body  p-0 m-0 rules-btn">
+                    <dl id="rules" class="py-2 collapse show">
                       <dd>
                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#privacyModal">
                           Privacy Policy
@@ -88,13 +89,15 @@ try {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
+      <!-- END OF ROW -->
     </div>
+    <!-- END OF CONTAINER -->
   </div>
+  <!-- MODAL -->
   <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -221,6 +224,7 @@ try {
       </div>
     </div>
   </div>
+  <!-- END OF MODAL -->
   <?php
   require_once('incs/footer.inc.php');
 } catch (Exception $th) {

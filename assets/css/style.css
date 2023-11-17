@@ -25,13 +25,102 @@ body {
 }
 
 #clock {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+  position: relative;
+  top: 1px;
+  right: 1px;
   font-size: 18px;
   color: #ffffff;
+  font-family: fa-regular-400;
+  border: solid 1px white;
+  padding: 3px 10px;
 }
 
 .nokia {
   font-family: nokia;
+}
+
+.card-body h5,
+.card-body p,
+.phone a,
+.rules-btn button {
+  text-decoration: none;
+  color: black;
+}
+
+.rules a,
+.rules button {
+  color: gray !important;
+  text-decoration: none;
+}
+
+.product-details .btn {
+  border-radius: 0px !important;
+}
+
+.rules a:hover,
+.rules button:hover {
+  color: black !important;
+  text-decoration: underline;
+  font-weight: 600 !important;
+}
+
+#clock:hover {
+  color: white !important;
+  background-color: #212529 !important;
+
+}
+
+@media (max-width: 767px) {
+  #clock {
+    display: none !important;
+  }
+}
+
+.product-details {
+  min-height: 80vh;
+}
+
+.checked {
+  color: orange;
+}
+
+/* .section-title {
+  border-bottom: 3px solid #212529;
+  padding-bottom: 14px;
+} */
+.section-title {
+  position: relative;
+  text-transform: uppercase;
+}
+
+.section-title:after {
+  background-color: #212529;
+  top: 120%;
+  content: "";
+  height: 5px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 80px;
+}
+
+.border-top {
+  border-top: 1px dashed #ddd;
+  padding: 20px 0px;
+}
+
+.carousel {
+  height: 75vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 75vh;
+
+}
+
+.nokia {
+  font-family: nokia;
+  font-size: 18px;
 }

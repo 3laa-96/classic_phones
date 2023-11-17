@@ -55,13 +55,15 @@ function logError(Exception $exception)
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    var timeString = hours + ":" + minutes + ":" + seconds;
+    var timeString = hours + ":" + minutes + ":<span style='font-size: smaller;'>" + seconds + "</span>";
 
     var clockElement = document.getElementById("clock");
     if (clockElement) {
-      clockElement.textContent = timeString;
+      clockElement.innerHTML = timeString;
     }
     setTimeout(updateClock, 1000);
   }
+
   updateClock();
+
 </script>

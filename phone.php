@@ -27,46 +27,108 @@ try {
     exit();
   }
   ?>
-  <div class="container my-5">
-    <h1>
-      <?php echo $b["name"] ?>
-    </h1>
-    <em>
-      <?php echo $b["year"]; ?>.
-    </em>
+  <div class="container my-5 product-details">
+
     <div class="row">
-      <div class="col-12 col-lg-9">
-        <div class="col-lg-12">
-          <p>
+      <!-- <div class="col-12 col-lg-9"> -->
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-12">
+            <div id="carouselControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselControls" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item">
+                  <img src="assets/images/carousel/carousel1.jpg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item active">
+                  <img src="assets/images/carousel/carousel2.jpg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/carousel/carousel3.jpg" class="d-block w-100" alt="..." />
+                </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
+              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
+          </div>
+          <div class="col-4">
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
+              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
+          </div>
+          <div class="col-4">
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start py-3 gallery-image img-fluid"
+              style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
+          </div>
+        </div>
+        <!-- <p>
             <img src="<?php echo PHONE_IMGS_PATH . $b["image"] ?>" class="float-start p-3"
               style="max-height: 500px; width: auto" alt="<?php $b["name"] . '.jpg' ?>" />
-          </p>
-        </div>
-        <div class="col-lg-12">
-          <p class="my-5">
-            <?php
-            echo nl2br($b["phone_description"]);
-            ?>
-          </p>
-          <div class="btn btn-outline-warning text-capitalize px-5 fs-2" id="buyBtn" data-bs-toggle="modal"
-            data-bs-target="#buyModal">buy</div>
-        </div>
+          </p> -->
+
+
       </div>
-      <div class="col-12 col-lg-3">
-        <div class="row gx-2">
-          <div class="col-6 col-md-6 col-lg-12 mb-3">
-            <div class="card phone-aside mx-md-auto h-100">
-              <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '2.jpg' ?>" class="card-img-top" />
-            </div>
-          </div>
-          <div class="col-6 col-md-6 col-lg-12 mb-3">
-            <div class="card phone-aside mx-md-auto h-100">
-              <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '3.jpg' ?>" class="card-img-top" />
-            </div>
-          </div>
+      <div class="col-lg-6">
+        <h1 class="py-3 pt-lg-0 ">
+          <?php echo $b["name"] ?>
+        </h1>
+        <h5 class="py-2 ">
+          <?php echo $b["year"]; ?>.
+        </h5>
+        <h5 class="border-top ">
+          $ 150
+        </h5>
+        <div class="pb-3">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
         </div>
+        <p class="mb-4 border-top">
+          <?php
+          echo nl2br($b["phone_description"]);
+          ?>
+        </p>
+
+        <div class="btn btn-outline-warning text-capitalize fs-5 " id="buyBtn" data-bs-toggle="modal"
+          data-bs-target="#buyModal">Buy Now</div>
+        <div class="btn btn-outline-warning text-capitalize fs-5 ms-2" id="buyBtn" data-bs-toggle="modal"
+          data-bs-target="#buyModal">Add To Cart</div>
       </div>
     </div>
+    <!-- <div class="col-12 col-lg-3">
+      <div class="row gx-2">
+        <div class="col-6 col-md-6 col-lg-12 mb-3">
+          <div class="card phone-aside mx-md-auto h-100">
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '2.jpg' ?>" class="card-img-top" />
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-12 mb-3">
+          <div class="card phone-aside mx-md-auto h-100">
+            <img src="<?php echo PHONE_IMGS_PATH . $b["image"] . '3.jpg' ?>" class="card-img-top" />
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- </div> -->
   </div>
   <!-- Modal -->
   <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">

@@ -37,12 +37,12 @@ require_once('config.php');
         <div class="navbar-nav w-100">
           <a class="nav-link <?php echo (isset($currentTab) && $currentTab == "home") ? "active" : ""; ?>"
             aria-current="page" href="<?php echo BASEURL; ?>index.php">
-            <i class="fas fa-home" style="color: #e7ebf4;"></i> Home</a>
+            <i class="fas fa-home px-1" style="color: #e7ebf4;"></i>Home</a>
           <a class="nav-link <?php echo (isset($currentTab) && $currentTab == "phones") ? "active" : ""; ?>"
             href="<?php echo BASEURL; ?>phones.php">
-            <i class="fas fa-mobile"></i> Phones</a>
+            <i class="fas fa-mobile px-1"></i>Products</a>
         </div>
-        <div id="clock" class=" ms-md-auto  btn btn-outline-light " disabled data-bs-toggle="button"></div>
+        <div id="clock" class=" ms-md-auto "></div>
       </div>
     </div>
   </nav>

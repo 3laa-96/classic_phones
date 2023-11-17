@@ -8,7 +8,6 @@ function exception_error_handler($severity, $message, $file, $line)
 }
 
 set_error_handler("exception_error_handler");
-
 try {
   ?>
 
@@ -41,7 +40,7 @@ try {
     </button>
   </div>
 
-  <div class="container py-5">
+  <div class="container pt-5">
     <p>Welcome to a nostalgic journey through the iconic era of mobile communication! Our website is a tribute to the
       timeless classics—the legendary Nokia phones that defined an entire generation from the year 2000 to 2009. In an
       age when mobile phones were becoming an essential part of our daily lives, Nokia stood at the forefront, setting
@@ -52,7 +51,60 @@ try {
       resilience, and a touch of retro charm.</p>
 
   </div>
-  <div class="alert alert-secondary my-5 text-center fs-4 text-secondary nokia ">AN ERA WHERE PHONES HAD STYLE AND
+  <div class="container">
+    <div class="d-flex flex-column align-items-center pb-5">
+      <h3 class="my-5 section-title">New Arrivals</h3>
+      <div class="row justify-content-center px-3">
+        <div class="col-6 col-md-4  mb-3 phone active">
+          <a>
+            <div class="card">
+              <img src="assets\images\phones\nokia-5310-used\5310-1.jpg" class="card-img-top" alt="image" />
+              <span class="badge-new badge bg-danger text-capitalize "> New</span>
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  <spam class="nokia">NOKIA </spam> 5310
+                </h5>
+
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4  mb-3 phone active">
+          <a>
+            <div class="card">
+              <img src="assets\images\phones\nokia-e71-used\e71-1.jpg" class="card-img-top" alt="image" />
+              <span class="badge-new badge bg-danger text-capitalize "> New</span>
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  <spam class="nokia">NOKIA </spam> e71
+                </h5>
+
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4  mb-3 phone active">
+          <a>
+            <div class="card">
+              <img src="assets\images\phones\nokia-8800-used\8800-1.jpg" class="card-img-top" alt="image" />
+              <span class="badge-new badge bg-danger text-capitalize "> New</span>
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  <spam class="nokia">NOKIA </spam> 8800
+                </h5>
+
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="alert alert-secondary m-5 text-center fs-5 text-secondary nokia ">AN ERA WHERE PHONES HAD STYLE AND
     CHARACTER
   </div>
 
