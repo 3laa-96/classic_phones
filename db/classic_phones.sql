@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2023 at 12:32 PM
+-- Generation Time: Nov 17, 2023 at 05:26 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `phone_details` (
   `phone_model_year` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `phone_rating` tinyint UNSIGNED NOT NULL DEFAULT '3',
   `phone_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `stock` enum('in stock','out of stock') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'in stock',
+  `phone_stock` enum('in stock','out of stock') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'in stock',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `phone_details` (
 -- Dumping data for table `phone_details`
 --
 
-INSERT INTO `phone_details` (`id`, `phone_name`, `phone_price`, `phone_image_path`, `phone_model_year`, `phone_rating`, `phone_description`, `stock`) VALUES
+INSERT INTO `phone_details` (`id`, `phone_name`, `phone_price`, `phone_image_path`, `phone_model_year`, `phone_rating`, `phone_description`, `phone_stock`) VALUES
 (2, 'Nokia 5310', 199, 'nokia-5310-used/5310-1', '2007', 4, 'The Nokia 5310 is an XpressMusic mobile phone, introduced by Nokia on 29 August 2007 and released in the fourth quarter of 2007. It is less than a centimeter thick and is available with blue, red, purple, pink, orange, silver or black trim, the main body also being available in grey, black or white. It features many music specific features as well as a 2.0-megapixel camera. At 9.9 mm thick and It is one of the lightest phones Nokia has ever produced at 71 g.', 'in stock'),
 (3, 'Nokia 3310', 149, 'nokia-3310-used/3310-1', '2000', 3, 'The Nokia 3310 is a discontinued GSM mobile phone announced on 1 September 2000, and released in the fourth quarter of the year, replacing the popular Nokia 3210. It sold very well, being one of the most successful phones, with 126 million units sold worldwide, and being one of Nokia\'s most iconic[citation needed] devices. The phone is still widely acclaimed and has gained a cult status due to its reputation for durability.', 'in stock'),
 (4, 'Nokia n95', 255, 'nokia-n95-used/n95-1', '2007', 4, 'The Nokia N95 is a smartphone produced by Nokia as part of their Nseries line of portable devices. Announced in September 2006, it was released to the market in March 2007. The N95 ran S60 3rd Edition, on Symbian OS v9.2. It has a two-way sliding mechanism, which can be used to access either media playback buttons or a numeric keypad. It was first released in silver and later on in black, with limited edition quantities in gold and purple. The launch price of the N95 was around US$730.', 'in stock'),
@@ -68,9 +68,9 @@ CREATE TABLE IF NOT EXISTS `request` (
   `last_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `phone_number` tinyint UNSIGNED DEFAULT NULL,
   `email` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `phone_id` int UNSIGNED NOT NULL,
+  `produce_id` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_id_phoneid` (`phone_id`)
+  KEY `fk_id_phoneid` (`produce_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `request` (
 -- Constraints for table `request`
 --
 ALTER TABLE `request`
-  ADD CONSTRAINT `fk_id_phoneid` FOREIGN KEY (`phone_id`) REFERENCES `phone_details` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `fk_id_phoneid` FOREIGN KEY (`produce_id`) REFERENCES `phone_details` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
